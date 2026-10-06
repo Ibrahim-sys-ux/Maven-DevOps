@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: com.devops.lab.AppTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.307 s -- in com.devops.lab.AppTest
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.234 s <<< FAILURE! -- in com.devops.lab.AppTest
+com.devops.lab.AppTest.verifySystemBottleneckValidation -- Time elapsed: 0.028 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: CRITICAL: System bottleneck or defect detected in value stream! ==> expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertFalse.failNotFalse(AssertFalse.java:63)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:36)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:235)
+	at com.devops.lab.AppTest.verifySystemBottleneckValidation(AppTest.java:26)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
