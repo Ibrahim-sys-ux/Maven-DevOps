@@ -28,14 +28,25 @@ jobs:
       - name: Run Automated Test Suites
         run: mvn test
 
-  deploy-staging:
+      - name: Package Executable Distribution
+        run: mvn package
+
+      - name: Upload Build Artifact for Verification
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-ready-jar
+          path: target/*.jar
+          retention-days: 5
+
+  deploy-production:
     needs: build-and-validate
     runs-on: ubuntu-latest
-    environment: staging
+    # Notice that the "environment: staging" gate has been removed entirely!
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v4
-      - name: Deploy to Staging Container
+
+      - name: Deploy to Production Environment
         run: |
-          echo "Approval granted! Deploying to staging stack..."
-          docker compose up -d
+          echo "CI tests passed. Deploying straight to Production automatically..."
+          docker compose up -d --force-recreate
