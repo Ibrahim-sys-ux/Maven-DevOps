@@ -38,5 +38,4 @@ jobs:
       - name: Deploy to Staging Container
         run: |
           echo "Approval granted! Deploying to staging stack..."
-          cd maven-automation-pipeline
-          docker compose up -d
+          docker compose --project-directory ./maven-automation-pipeline up -d
