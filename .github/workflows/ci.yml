@@ -38,8 +38,4 @@ jobs:
       - name: Deploy to Staging Container
         run: |
           echo "Approval granted! Deploying to staging stack..."
-<<<<<<< Updated upstream
-          docker compose --project-directory ./maven-automation-pipeline up -d
-=======
           docker-compose up -d
->>>>>>> Stashed changes
